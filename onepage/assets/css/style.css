@@ -1,0 +1,57 @@
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+h1:hover {
+    color: rgb(69, 69, 161);
+}
+
+h2 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+h3 {
+    text-decoration: underline;
+    text-align: center;
+    
+
+
+}
+
+.prof {
+    background-color: blue;
+}
+
+body {
+    background-color: cadetblue;
+}
+
+.image {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;;
+}
+
+.image div {
+    width: calc(100% / 3);
+    text-align: center;
+} 
+.image div img {
+    max-width: 100%;
+    width: calc(100%/3);
+    object-fit: cover;
+}
+.logo {
+    display: flex;
+    width:100%;
+}
+/* on sélectionne les balises enfants de .logo */
+.logo > * {
+    width: calc(100% / 5);
+}
+.competences img {
+    max-width:100%;
+    object-fit: cover;
+}
