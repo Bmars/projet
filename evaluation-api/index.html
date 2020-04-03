@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World News</title>
+</head>
+
+<body>
+    <h1 class="name"></h1>
+    <p class= "author"></p>
+    <p class= "title"></p>
+    <p class="description"></p>
+    <div>
+        <label for="description">Recherche de l'article</label>
+        <input type="text" name="description" id="description">
+    </div>
+    <button>publier</button>
+
+<script>
+    // 
+var url = 'http://newsapi.org/v2/everything?' +
+          'q=Apple&' +
+          'from=2020-04-03&' +
+          'sortBy=popularity&' +
+          'apiKey=5e7094d6874e47828a16e6cb04eda3cd';
+
+var req = new Request(url);
+fetch(req)
+.then(function(response) {
+    return response.json();
+})
+
+.then(function(data){
+    console.log(data);
+
+    const name = document.querySelector("h1");
+    const author = document.querySelector("author");
+    const title = document.querySelector("title");
+    const description = document.querySelector("descritpion");
+    
+     const names = data.articles.names;
+      const authors = data.article.author;
+      const titles = data.articles.title;
+      const descriptions = data.articles.description;
+
+    name.innerText+=names;
+    authors.innerText+=author;
+    title.innerText+=titles;
+    description.innerText+=descriptions;
+
+
+
+})
+
+</script>
+
+</body>
